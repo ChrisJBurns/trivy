@@ -50,6 +50,7 @@ func NewScanner(filePatterns []string, opt config.ScannerOption) (Scanner, error
 	opts := []options.ScannerOption{
 		options.ScannerWithSkipRequiredCheck(true),
 		options.ScannerWithEmbeddedPolicies(!opt.DisableEmbeddedPolicies),
+		options.ScannerWithEmbeddedLibraries(!opt.DisableEmbeddedLibraries),
 	}
 
 	policyFS, policyPaths, err := createPolicyFS(opt.PolicyPaths)
