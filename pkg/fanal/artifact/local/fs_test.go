@@ -659,9 +659,11 @@ func TestCloudFormationMisconfigurationScan(t *testing.T) {
 			},
 			artifactOpt: artifact.Option{
 				MisconfScannerOption: config.ScannerOption{
-					RegoOnly:    true,
-					Namespaces:  []string{"user"},
-					PolicyPaths: []string{"./testdata/misconfig/cloudformation/single-failure/rego"},
+					RegoOnly:                 true,
+					Namespaces:               []string{"user"},
+					PolicyPaths:              []string{"./testdata/misconfig/cloudformation/single-failure/rego"},
+					DisableEmbeddedPolicies:  true,
+					DisableEmbeddedLibraries: true,
 				},
 			},
 			putBlobExpectation: cache.ArtifactCachePutBlobExpectation{
@@ -719,9 +721,11 @@ func TestCloudFormationMisconfigurationScan(t *testing.T) {
 			},
 			artifactOpt: artifact.Option{
 				MisconfScannerOption: config.ScannerOption{
-					RegoOnly:    true,
-					Namespaces:  []string{"user"},
-					PolicyPaths: []string{"./testdata/misconfig/cloudformation/multiple-failures/rego"},
+					RegoOnly:                 true,
+					Namespaces:               []string{"user"},
+					PolicyPaths:              []string{"./testdata/misconfig/cloudformation/multiple-failures/rego"},
+					DisableEmbeddedPolicies:  true,
+					DisableEmbeddedLibraries: true,
 				},
 			},
 			putBlobExpectation: cache.ArtifactCachePutBlobExpectation{
@@ -801,9 +805,11 @@ func TestCloudFormationMisconfigurationScan(t *testing.T) {
 			},
 			artifactOpt: artifact.Option{
 				MisconfScannerOption: config.ScannerOption{
-					RegoOnly:    true,
-					Namespaces:  []string{"user"},
-					PolicyPaths: []string{"./testdata/misconfig/cloudformation/no-results/rego"},
+					RegoOnly:                 true,
+					Namespaces:               []string{"user"},
+					PolicyPaths:              []string{"./testdata/misconfig/cloudformation/no-results/rego"},
+					DisableEmbeddedPolicies:  true,
+					DisableEmbeddedLibraries: true,
 				},
 			},
 			putBlobExpectation: cache.ArtifactCachePutBlobExpectation{
@@ -831,9 +837,11 @@ func TestCloudFormationMisconfigurationScan(t *testing.T) {
 			},
 			artifactOpt: artifact.Option{
 				MisconfScannerOption: config.ScannerOption{
-					RegoOnly:    true,
-					Namespaces:  []string{"user"},
-					PolicyPaths: []string{"./testdata/misconfig/cloudformation/passed/rego"},
+					RegoOnly:                 true,
+					Namespaces:               []string{"user"},
+					PolicyPaths:              []string{"./testdata/misconfig/cloudformation/passed/rego"},
+					DisableEmbeddedPolicies:  true,
+					DisableEmbeddedLibraries: true,
 				},
 			},
 			putBlobExpectation: cache.ArtifactCachePutBlobExpectation{
